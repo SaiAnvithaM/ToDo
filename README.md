@@ -9,6 +9,7 @@ Here are the files included in the project:
 5.models/contact.js : This file is for defining the structure and properties of MongoDB.
 
 User have to enter their tasks they need to do according to their schedule. After clicking the ADD TASK button, the task is added into the list which appear in the UI and also details will be stored in the database(Here Robo 3T is used)  along with the id.Id of every task plays major role while deleting the tasks.Tasks get deleted using the unique id's which are generated automatically and that reflects in the UI.
-
+LIVE URL:
+https://saianvitham.github.io/ToDo/
 APPLICATION INTERFACE
 ![Peoject](https://github.com/SaiAnvithaM/ToDo/assets/126160419/4ed1347e-a119-40c1-a031-1bc0b75afd4b)
