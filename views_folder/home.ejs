@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+           <%= locals.title %>
+        </title>
+
+        <!-- importing bootstrap -->
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- importing fontawesome -->
+        <script src="https://kit.fontawesome.com/1dc91dcf26.js" crossorigin="anonymous"></script>
+        <!-- linking css -->
+        <link rel="stylesheet" type="text/css" href="/css/home.css">
+    </head>
+    <body >
+        <div class="upper">
+            <!-- whole ToDo container -->
+        <div class="container">
+        <div class="title">
+         <span style="font-size: 30px;"><i class="fa-solid fa-list"></i></span>
+         <!-- title -->
+         <span style="font-family: Arial;">My ToDo List</span>
+        </div>
+      <p id="quote">A Little Progress Each Day Adds Up To Big Results</p>
+
+
+      <!-- taking input from user using post request -->
+      <form method="POST" action="/create-task">
+        <p id="description"><label>Description</label></p>
+        <input id="content" type="text" name="content" placeholder="What you need to do?" required>
+        <input id="status" type="text" name="status" placeholder="Current status" required >
+        <p>
+        <button type="submit" class="add_task"><i class="fa-solid fa-plus"></i>&nbsp&nbspADD TASK</button>
+    </p>
+    </form>
+
+      <p id="quote"><i class="fa-solid fa-up"></i>STAY ON TRACK</p>
+       <div>
+    
+        
+
+
+
+       <ul style="padding-left: 0;">
+        <% for(let i of description_list) {%>
+                <li class="contact">
+                    <!-- Adding user entered input in the list -->
+                  <div id="lists-div">
+                        <span id="contentInput" style="width:50%;"> <%= i.content%> </span>
+                        <span id="statusInput"> <%= i.status%></span>
+
+                <!-- delete button -->
+                   <span class="delete_button">
+                        <a href="/delete-contact/?content=<%= i.content %>" >
+                            <i class="fa-solid fa-trash"></i>
+                        </i>
+                        </a>
+                    </span>
+                   <hr>
+                </div>
+            </li>
+            <%}%>
+       </ul>
+</div>
+</div><!--container-->
+</div><!--upper-->
+    </body>
+</html>
